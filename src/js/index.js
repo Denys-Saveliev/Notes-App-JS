@@ -1,8 +1,10 @@
 import refs from './refs';
 import data from '../data/tempData.json';
 import ontoDoItemClick from './onToDoItemClick';
-import onSubmitForm from './onSubmitForm';
+import { onSubmitForm } from './onSubmitForm';
 import toggleModal from './toggleModal';
+import onModalClose from './onModalClose';
+import calculationTotalCategories from './calculateCategoriesStats';
 import '../sass/main.scss';
 
 const toDoList = [...data];
@@ -12,7 +14,7 @@ markupToDoList(isToDoArchived);
 refs.itemsActiveList.addEventListener('click', ontoDoItemClick);
 refs.form.addEventListener('submit', onSubmitForm);
 refs.addNewItemsBtn.addEventListener('click', toggleModal);
-refs.closeModalBtn.addEventListener('click', toggleModal);
+refs.closeModalBtn.addEventListener('click', onModalClose);
 refs.showArchivedBtn.addEventListener('click', onShowAllArchivedItems);
 refs.deleteAllItemsBtn.addEventListener('click', onDeleteAllItems);
 
@@ -20,7 +22,9 @@ function markupToDoList(showArchived) {
   const markup = toDoList
     .filter(todo => todo.isArchived === showArchived)
     .map(({ id, name, category, categoryText, content, created, dates }) => {
-      return `<div class="container active">
+      return `<div class="container active ${
+        showArchived ? 'is_archived' : ''
+      }">
          <ul class="active-list">
             <li class="list__item icon ${category}"></li>
             <li class="list__item">${name}</li>
@@ -31,15 +35,15 @@ function markupToDoList(showArchived) {
             <li class="list__item">
                <ul class="btn-list">
                   <li>
-                     <button type="button" data-id=${id} data-operation='edit' class="btn icon edit">
+                     <button type="button" data-id=${id} data-operation='edit' aria-label='edit' class="btn icon edit">
                      </button>
                   </li>
                   <li>
-                     <button type="button" data-id=${id} data-operation='archive' class="btn icon archive">
+                     <button type="button" data-id=${id} data-operation='archive' aria-label='archive' class="btn icon archive">
                      </button>
                   </li>
                   <li>
-                     <button type="button" data-id=${id} data-operation='delete' class="btn icon bin">
+                     <button type="button" data-id=${id} data-operation='delete' aria-label='delete'  class="btn icon bin">
                      </button>
                   </li>
                </ul>
@@ -48,12 +52,15 @@ function markupToDoList(showArchived) {
       </div>`;
     })
     .join('');
+
   refs.itemsActiveList.innerHTML = markup;
+  refs.itemsArchivedList.innerHTML = calculationTotalCategories(toDoList);
 }
 
 function onShowAllArchivedItems() {
   isToDoArchived = !isToDoArchived;
   markupToDoList(isToDoArchived);
+  refs.createListClass.classList.toggle('create-list__item--red');
 }
 
 function onDeleteAllItems() {

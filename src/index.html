@@ -21,21 +21,21 @@
          <li class="create-list__item">
             <ul class="btn-list">
                <li class="btn-list__item">
-                  <button type="button" class="btn add-note-btn-js">
+                  <button type="button" class="btn add-note-btn-js" aria-label='edit'>
                      <svg class="button__icon" width="18" height="18">
                         <use href="./images/sprite.svg#icon-plus"></use>
                      </svg>
                   </button>
                </li>
                <li class="btn-list__item">
-                  <button type="button" class="btn archive-btn-js">
+                  <button type="button" class="btn archive-btn-js" aria-label='archive'>
                      <svg class="button__icon" width="18" height="18">
                         <use href="./images/sprite.svg#icon-box-add"></use>
                      </svg>
                   </button>
                </li>
                <li class="btn-list__item">
-                  <button type="button" class="btn delete-btn-js">
+                  <button type="button" class="btn delete-btn-js" aria-label='delete'>
                      <svg class="button__icon" width="18" height="18">
                         <use href="./images/sprite.svg#icon-bin"></use>
                      </svg>
@@ -101,17 +101,23 @@
    <!-- *Backdrop -->
    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-         <button class="close-modal" type="button">close</button>
+         <button class="modal__btn" type="button">
+            <svg class="modal__icon">
+               <use href="./images/sprite.svg#icon-close"></use>
+            </svg>
+         </button>
          <form class="form">
-
             <p class="form__text"><output name="title">Please choose your task</output></p>
 
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
+            <div class="form__name">
+               <label for="name">Name</label>
+               <input type="text" id="name" name="name">
+            </div>
+
             <div class="button-container">
                <div class="radio-btn">
                   <label for="task">Task</label>
-                  <input value='task' type="radio" id="task" name="category">
+                  <input value='task' type="radio" checked id="task" name="category">
                </div>
 
                <div class="radio-btn">

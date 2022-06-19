@@ -4,7 +4,7 @@ import toggleModal from './toggleModal';
 import flatpickr from 'flatpickr';
 import uniqid from 'uniqid';
 
-export default function onSubmitForm(e) {
+function onSubmitForm(e) {
   e.preventDefault();
 
   const form = e.currentTarget.elements;
@@ -23,8 +23,8 @@ export default function onSubmitForm(e) {
       .split(' ')
       .filter(str =>
         str.match(
-          '^([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$',
-        ),
+          '^([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$'
+        )
       ),
   };
 
@@ -71,3 +71,5 @@ function updateToDoItem(id, { name, category, categoryText, content, dates }) {
   toDoList[index].content = content;
   toDoList[index].dates = dates;
 }
+
+export { onSubmitForm, toCapitilizeCategory };

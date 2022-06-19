@@ -15,9 +15,14 @@
    align-items: center;
 }
 
+.create-list__item--red {
+   background-color: rgb(131, 35, 35);
+}
+
 .create-list__item,
 .list__item {
    width: 160px;
+   overflow: hidden;
 }
 
 .create-list__item:first-child {
@@ -67,6 +72,10 @@
 
    color: darkslategray;
    background-color: rgb(207, 206, 206);
+}
+
+.is_archived {
+   color: rgb(131, 35, 35);
 }
 
 .list__item:first-child {
@@ -130,7 +139,7 @@
 }
 
 .category-list__item:first-child {
-   width: 350px;
+   width: 325px;
 }
 
 .active-list--archived {
@@ -158,7 +167,7 @@
 }
 
 .category-list__item--indent:first-child {
-   margin-left: 50px;
+   margin-left: 105px;
 }
 
 .category-list__item--indent:nth-child(2) {

@@ -21,6 +21,16 @@
    font-size: 20px;
 }
 
+.form__name {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 15px;
+}
+
+.form__name > label {
+   margin-bottom: 8px;
+}
+
 label {
    font-size: 14px;
    margin-left: 6px;
@@ -45,11 +55,59 @@ label {
    margin-bottom: 20px;
 }
 
+textarea {
+   margin-bottom: 10px;
+   width: 100%;
+}
+
 .form__btn {
    display: block;
    padding: 4px 10px;
    margin: 0 auto;
    border-radius: 5px;
-   border: none;
+   border: 1px solid #ffffff;
+   color: #ffffff;
+   background-color: gray;
    cursor: pointer;
+   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+   &:hover {
+      background-color: #cfcece;
+      color: gray;
+      border-color: gray;
+   }
+}
+
+.modal__btn {
+   position: absolute;
+   top: 8px;
+   right: 8px;
+   width: 30px;
+   height: 30px;
+   box-sizing: border-box;
+   cursor: pointer;
+   fill: #ffffff;
+   background-color: gray;
+   border: 1px solid #ffffff;
+   border-radius: 50%;
+   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+   &:hover,
+   &:focus {
+      cursor: pointer;
+      fill: gray;
+      border-color: gray;
+      background-color: #cfcece;
+   }
+}
+
+.modal__icon {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 23px;
+   height: 23px;
+
+   // fill: #0000001a;
 }
