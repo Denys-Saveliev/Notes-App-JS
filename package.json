@@ -18,13 +18,17 @@
     "url": "https://github.com/Denys-Saveliev/Notes-App-JS/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "flatpickr": "^4.6.13",
+    "modern-normalize": "^1.1.0",
+    "uniqid": "^5.4.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "os-browserify": "^0.3.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "process": "^0.11.10"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }

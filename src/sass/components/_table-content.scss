@@ -1,0 +1,166 @@
+.container {
+   display: flex;
+   justify-content: center;
+   margin: 0 auto 10px auto;
+   max-width: 1065px;
+   height: 30px;
+   border-radius: 5px;
+   background-color: rgb(128, 128, 128);
+}
+
+.create-list,
+.active-list,
+.category-list {
+   display: flex;
+   align-items: center;
+}
+
+.create-list__item,
+.list__item {
+   width: 160px;
+}
+
+.create-list__item:first-child {
+   margin-left: 50px;
+   width: 180px;
+}
+
+.create-list__item:nth-child(4),
+.list__item:nth-child(5) {
+   width: 250px;
+}
+
+.create-list__item:last-child,
+.list__item:last-child {
+   width: 90px;
+}
+
+.btn-list {
+   display: flex;
+   align-items: center;
+}
+
+.btn {
+   display: flex;
+   border: none;
+   background: none;
+}
+
+.button__icon {
+   fill: rgb(185, 182, 182);
+   transition: fill 350ms ease-in-out;
+
+   &:hover,
+   &:focus {
+      cursor: pointer;
+      fill: #ffffff;
+   }
+}
+
+.wrapper {
+   margin-bottom: 80px;
+}
+
+.active {
+   height: 50px;
+   margin-bottom: 10px;
+
+   color: darkslategray;
+   background-color: rgb(207, 206, 206);
+}
+
+.list__item:first-child {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   background-color: rgb(80, 79, 79);
+}
+
+.icon {
+   width: 30px;
+   height: 20px;
+   background-size: 18px 18px;
+   background-repeat: no-repeat;
+   background-position: 50% 50%;
+
+   transition: opacity 350ms ease-in-out;
+
+   &:hover,
+   &:focus {
+      cursor: pointer;
+      opacity: 0.7;
+   }
+}
+
+.idea {
+   background-image: url("../images/bulb.svg");
+}
+
+.thought {
+   background-image: url("../images/bubble2.svg");
+}
+
+.task {
+   background-image: url("../images/list2.svg");
+}
+
+.quote {
+   background-image: url("../images/quotes-right.svg");
+}
+
+.list__item:nth-child(2) {
+   width: 180px;
+   margin-left: 8px;
+}
+
+.edit {
+   background-image: url("../images/pencil.svg");
+}
+
+.archive {
+   background-image: url("../images/box-add.svg");
+}
+
+.bin {
+   background-image: url("../images/bin.svg");
+}
+
+.category-list__item {
+   width: 250px;
+}
+
+.category-list__item:first-child {
+   width: 350px;
+}
+
+.active-list--archived {
+   margin-right: auto;
+}
+
+.list__item--archived:first-child {
+   margin-left: 10px;
+}
+
+.list__item--archived:nth-child(2) {
+   margin-left: 60px;
+}
+
+.list__item--archived:nth-child(3) {
+   margin-left: 185px;
+}
+
+.list__item--archived:last-child {
+   margin-left: 105px;
+}
+
+.category-list--align {
+   margin-right: auto;
+}
+
+.category-list__item--indent:first-child {
+   margin-left: 50px;
+}
+
+.category-list__item--indent:nth-child(2) {
+   margin-left: 30px;
+}

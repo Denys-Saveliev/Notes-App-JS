@@ -1,0 +1,55 @@
+.modal {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   border-radius: 10px;
+   padding: 40px;
+   z-index: 1000;
+   transform: translate(-50%, -50%) scale(1);
+   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   background-color: gray;
+}
+
+.backdrop.is-hidden .modal {
+   transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+}
+
+.form__text {
+   text-align: center;
+   margin-bottom: 25px;
+   text-decoration: underline;
+   font-size: 20px;
+}
+
+label {
+   font-size: 14px;
+   margin-left: 6px;
+   cursor: pointer;
+}
+
+.button-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.radio-btn {
+   display: flex;
+   align-items: center;
+   flex-direction: row-reverse;
+   justify-content: flex-end;
+   margin-bottom: 8px;
+}
+
+.radio-btn:last-child {
+   margin-bottom: 20px;
+}
+
+.form__btn {
+   display: block;
+   padding: 4px 10px;
+   margin: 0 auto;
+   border-radius: 5px;
+   border: none;
+   cursor: pointer;
+}
