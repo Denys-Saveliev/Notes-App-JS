@@ -1,6 +1,7 @@
 import { markupToDoList, isToDoArchived, toDoList } from './index';
 import toggleModal from './toggleModal';
 import editItemViaModal from './editItemViaModal';
+import { onEscClickToCloseModal } from './index';
 
 export default function ontoDoItemClick(e) {
   if (e.target.nodeName !== 'BUTTON') {

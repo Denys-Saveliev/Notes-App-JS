@@ -17,6 +17,8 @@ refs.addNewItemsBtn.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', onModalClose);
 refs.showArchivedBtn.addEventListener('click', onShowAllArchivedItems);
 refs.deleteAllItemsBtn.addEventListener('click', onDeleteAllItems);
+refs.modal.addEventListener('click', onBackdropClickToCloseModal);
+window.addEventListener('keydown', onEscClickToCloseModal);
 
 function markupToDoList(showArchived) {
   const markup = toDoList
@@ -74,4 +76,18 @@ function onDeleteAllItems() {
   }
 }
 
-export { markupToDoList, isToDoArchived, toDoList };
+function onEscClickToCloseModal(e) {
+  if (e.code === 'Escape') {
+    toggleModal();
+    window.removeEventListener('keydown', onEscClickToCloseModal);
+  }
+}
+
+function onBackdropClickToCloseModal(e) {
+  if (e.currentTarget === e.target) {
+    toggleModal();
+    window.removeEventListener('keydown', onEscClickToCloseModal);
+  }
+}
+
+export { markupToDoList, isToDoArchived, toDoList, onEscClickToCloseModal };

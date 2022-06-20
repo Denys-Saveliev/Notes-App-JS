@@ -1,4 +1,9 @@
-import { markupToDoList, isToDoArchived, toDoList } from './index';
+import {
+  markupToDoList,
+  isToDoArchived,
+  toDoList,
+  onEscClickToCloseModal,
+} from './index';
 import refs from './refs';
 import toggleModal from './toggleModal';
 import flatpickr from 'flatpickr';
@@ -40,6 +45,8 @@ function onSubmitForm(e) {
 
   e.currentTarget.reset();
   toggleModal();
+  window.removeEventListener('keydown', onEscClickToCloseModal);
+
   markupToDoList(isToDoArchived);
 }
 
